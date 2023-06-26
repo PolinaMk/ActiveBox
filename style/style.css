@@ -114,6 +114,7 @@ a {
     background: #BABBC5;
     position: absolute;
     transition: all 0.3s;
+    transform: translateY(39px);
 }
 
 /* Promo */
@@ -141,9 +142,9 @@ a {
 
 .promo__title {
     color: #FFF;
-    width: 100%;
     text-align: center;
     font-size: 64px;
+    line-height: 75px;
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 31px;
@@ -153,6 +154,7 @@ a {
     color: #FFF;
     text-align: center;
     font-size: 24px;
+    line-height: 28px;
     margin-bottom: 79px;
 }
 
@@ -168,6 +170,7 @@ a {
     color: #FFF;
     text-align: center;
     font-size: 24px;
+    line-height: 28px;
     font-weight: 900;
     text-transform: uppercase;
     display: block;
@@ -193,7 +196,6 @@ a {
     .container {
         max-width: 1014px;
         padding: 0 15px;
-        margin: 0 auto;
     }
 
     .nav__link {
@@ -207,11 +209,13 @@ a {
     .promo__title {
         font-size: 48px;
         margin-bottom: 61px;
+        line-height: 56px;
     }
 
     .promo__text {
         font-size: 18px;
         margin-bottom: 89px;
+        line-height: 21px;
     }
 
     .promo__button {
@@ -253,24 +257,20 @@ a {
     .promo__title {
         font-size: 36px;
         margin-bottom: 33px;
+        line-height: 42px;
     }
 
     .promo__text {
         font-size: 14px;
         margin-bottom: 51px;
+        line-height: 16px;
     }
 
     .promo__button {
-        max-width: 280px;
+        max-width: 100%;
     }
 
     .btn {
         padding: 18px 0;
-    }
-}
-
-@media (max-width: 330px) {
-    .container {
-        max-width: 310px;
     }
 }
