@@ -291,8 +291,9 @@ a {
     }
 
     &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         column-gap: 30px;
         row-gap: 88px;
 
@@ -304,21 +305,15 @@ a {
         @media (max-width: 450px) {
             column-gap: 41px;
         }
-    }
-
-    &__item {
-        width: calc((100% - 60px) / 3 );
-
-        @media (max-width: 1024px) {
-            width: calc((100% - 40px) / 3 );
-        }
 
         @media (max-width: 630px) {
-            width: calc((100% - 20px) / 2);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
 
         @media (max-width: 450px) {
-            width: 100%;
+            grid-template-rows: repeat(6, 1fr);
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 
@@ -391,12 +386,13 @@ a {
     }
 
     &__container {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
 
     &__item-wrapper {
-        width: calc(100% / 4);
+        // width: calc(100% / 4);
         overflow: hidden;
         border: 1px solid #FFF;
         position: relative;
@@ -407,7 +403,7 @@ a {
         }
 
         @media (max-width: 650px) {
-            width: calc(100% / 2);
+            // width: calc(100% / 2);
             aspect-ratio: 1/.9;
         }
     }
@@ -561,13 +557,28 @@ a {
         object-fit: cover;
     }
 
+    &__item-profile {
+        margin-bottom: 14px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        margin-bottom: 18px;
+
+        @media (max-width: 1024px) {
+            margin-bottom: 23px;
+        }
+
+        @media (max-width: 320px) {
+            margin-bottom: 38px;
+        }
+    }
+
     &__name {
         color: #2D3033;
         font-size: 24px;
         font-weight: 700;
         text-transform: capitalize;
         line-height: 28px;
-        margin-bottom: 5px;
 
         @media (max-width: 1024px) {
             font-size: 18px;
@@ -579,17 +590,11 @@ a {
         color: #FF4343;
         font-size: 18px;
         text-transform: uppercase;
-        margin-bottom: 18px;
         line-height: 21px;
 
         @media (max-width: 1024px) {
             font-size: 14px;
             line-height: 16px;
-            margin-bottom: 23px;
-        }
-
-        @media (max-width: 320px) {
-            margin-bottom: 38px;
         }
     }
 
@@ -628,20 +633,39 @@ a {
 
     }
 
+    &__icon-item:hover {
+        border: 1px solid $main-color;
+    }
+
+    &__icon-item:active {
+        border: 1px solid rgb(185, 12, 12);
+        transition: .2s;
+    }
+
     &__icon-link,
     &__icon {
         width: 100%;
         height: 100%;
         object-fit: cover;
+
+    }
+
+    &__icon {
+        padding: 7px 7px;
+    }
+
+    &__icon-link &__icon:hover path{
+        fill: $main-color;
+        transition: .2s;
+    }
+
+    &__icon-link &__icon:active path{
+        fill: rgb(185, 12, 12);
+        transition: .2s;
     }
 
     &__icon-link {
         display: inline-block;
-        padding: 9px 9px;
-
-        @media (max-width: 1024px) {
-            padding: 7px 7px;
-        }
     }
 
 
@@ -748,14 +772,22 @@ a {
 
     &__copirught-wrapper {
         background: #2C3154;
-        padding: 24px 15px;
+        padding: 24px 0;
 
         @media (max-width: 1024px) {
-            padding: 14.4px 15px;
+            padding: 14.4px 0;
         }
 
         @media (max-width: 535px) {
-            padding: 29px 15px;
+            padding: 29px 0;
+        }
+    }
+
+    &__copirught-container {
+        max-width: 400px;
+
+        @media (max-width: 1024px) {
+            max-width: 350px;
         }
     }
 
@@ -765,17 +797,10 @@ a {
         font-size: 18px;
         line-height: 21px;
         text-transform: capitalize;
-        max-width: 370px;
-        margin: 0 auto;
 
         @media (max-width: 1024px) {
             font-size: 14px;
             line-height: 16px;
-            max-width: 320px;
-        }
-
-        @media (max-width: 535px) {
-            padding: 29px 0;
         }
     }
 
