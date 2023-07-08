@@ -1,11 +1,12 @@
-// $(document).ready(function() {
-//     $(window).scroll(function() {
-//       var scroll = $(window).scrollTop();
+window.onscroll = () => {
+    const header = document.querySelector('.header');
+    const promo = document.querySelector('.promo');
+    const Y = window.scrollY;
+    const heightPromo = promo.clientHeight;
 
-//       if (scroll >= 747) {
-//         $("#masthead").addClass("scrolled");
-//       } else {
-//         $("#masthead").removeClass("scrolled");
-//       }
-//     });
-// });
+    if (Y > heightPromo) {
+        header.classList.add("header__scrolled");
+    } else {
+        header.classList.remove("header__scrolled");
+    };
+}
