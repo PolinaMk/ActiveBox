@@ -93,7 +93,7 @@ path {
 }
 @media (max-width: 890px) {
   .header__burger-wrapper {
-    display: block;
+    display: none;
   }
 }
 .header__burger-wrapper__burger {
@@ -105,6 +105,52 @@ path {
   .header__burger-wrapper__burger {
     fill: #FF4343;
   }
+}
+.header .burger {
+  display: none;
+  width: 24px;
+  position: relative;
+}
+@media (max-width: 890px) {
+  .header .burger {
+    display: block;
+  }
+}
+.header .burger .burger__line {
+  height: 3px;
+  width: 100%;
+  background: #FFF;
+  transition: 0.5s;
+  position: relative;
+  left: 0;
+  top: 50%;
+}
+.header .burger .burger__line:nth-child(1) {
+  top: -4px;
+}
+.header .burger .burger__line:nth-child(3) {
+  top: 4px;
+}
+.header .burger-cross {
+  position: relative;
+}
+.header .burger-cross .burger__line:nth-child(2) {
+  opacity: 0;
+  transition: 0.5s;
+}
+.header .burger-cross .burger__line:first-child {
+  opacity: 1;
+  transform: rotate(405deg);
+  transition: 0.5s;
+  top: 2px;
+  position: absolute;
+}
+.header .burger-cross .burger__line:nth-child(3) {
+  opacity: 1;
+  transform: rotate(-405deg);
+  transition: 0.5s;
+  top: 2px;
+  position: absolute;
 }
 @media (max-width: 890px) {
   .header__nav {
@@ -185,6 +231,11 @@ path {
   width: 100%;
   z-index: 2;
 }
+@media (max-width: 767px) {
+  .header__scrolled {
+    padding: 21.4px 0;
+  }
+}
 .header__scrolled::after {
   content: "";
   width: 0;
@@ -196,6 +247,13 @@ path {
   left: 50%;
   transform: translate(-50%, 0);
   top: 100%;
+}
+
+.header__burger {
+  display: none;
+}
+.header__burger .nav__item-burger {
+  display: block;
 }
 
 .promo {
@@ -287,17 +345,33 @@ path {
   font-weight: 900;
   text-transform: uppercase;
   display: block;
-  transition: all 0.3s linear;
+  transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
   max-width: 369px;
   margin: 0 auto;
+  transition: 0.4s;
+  transform: perspective(1px) translateZ(0);
 }
-.promo__button:hover {
+.promo__button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0;
+}
+.promo__button::before {
+  clip-path: circle(0.5% at 50% 50%);
   background: rgb(231, 20, 20);
-  transition: all 0.3s linear;
+  transition: 0.4s;
+  opacity: 1;
 }
-.promo__button:active {
+.promo__button:hover::before {
+  clip-path: circle(100% at 50% 50%);
+}
+.promo__button:active::before {
+  clip-path: circle(100% at 50% 50%);
   box-shadow: 4px 4px 30px 0px #FF4343;
-  transition: all 0.3s linear;
 }
 @media (max-width: 767px) {
   .promo__button {
@@ -552,6 +626,7 @@ path {
 .swiper {
   margin-bottom: 137px;
   padding-bottom: 64px;
+  z-index: 0;
 }
 @media (max-width: 1024px) {
   .swiper {
@@ -925,17 +1000,33 @@ path {
   font-weight: 900;
   text-transform: uppercase;
   display: block;
-  transition: all 0.3s linear;
+  transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
   max-width: 369px;
   margin: 0 auto;
+  transition: 0.4s;
+  transform: perspective(1px) translateZ(0);
 }
-.download__button:hover {
+.download__button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0;
+}
+.download__button::before {
+  clip-path: circle(0.5% at 50% 50%);
   background: rgb(231, 20, 20);
-  transition: all 0.3s linear;
+  transition: 0.4s;
+  opacity: 1;
 }
-.download__button:active {
+.download__button:hover::before {
+  clip-path: circle(100% at 50% 50%);
+}
+.download__button:active::before {
+  clip-path: circle(100% at 50% 50%);
   box-shadow: 4px 4px 30px 0px #FF4343;
-  transition: all 0.3s linear;
 }
 @media (max-width: 767px) {
   .download__button {
@@ -1103,6 +1194,60 @@ path {
 }
 .footer__copiright-name {
   color: #FFF;
+}
+
+.header__nav-burger {
+  display: block;
+  position: absolute;
+  top: 106px;
+  transition: all 0.3s linear;
+}
+.header__nav-burger .nav__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  row-gap: 20px;
+  column-gap: 4px;
+  font-size: 13px;
+  text-align: left;
+}
+.header__nav-burger .nav__item {
+  width: 100%;
+}
+.header__nav-burger #nav__link {
+  font-size: 13px;
+  text-align: left;
+}
+@media (max-width: 1024px) {
+  .header__nav-burger #nav__link {
+    font-size: 13px;
+    text-align: left;
+  }
+}
+.header__nav-burger .nav__link-active::after,
+.header__nav-burger .nav__link::after {
+  display: none;
+}
+
+.header__burger-menu::after {
+  display: none;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.hidden-html {
+  overflow: hidden;
+}
+
+.promo-fixed {
+  position: fixed;
+  z-index: 1;
+}
+
+.visible {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=/style.ff1c4cab.css.map */

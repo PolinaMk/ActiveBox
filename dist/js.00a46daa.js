@@ -130,6 +130,22 @@ window.onscroll = function () {
   }
   ;
 };
+
+// Burger
+var burgerOpen = document.querySelector('.burger');
+var navigation = document.querySelector('.header__nav');
+var promo = document.querySelector('.promo');
+var promoContent = document.querySelector('.promo__wrapper');
+var header = document.querySelector('.header');
+burgerOpen.addEventListener("click", function () {
+  burgerOpen.classList.toggle("burger-cross");
+  promoContent.classList.toggle("hidden");
+  promo.classList.toggle("promo-fixed");
+  navigation.classList.toggle("header__nav-burger");
+  // header.classList.toggle("header__scrolled");
+  // header.classList.toggle("header__burger-menu");
+  document.body.classList.toggle("hidden-html");
+});
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -155,7 +171,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57786" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54889" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
