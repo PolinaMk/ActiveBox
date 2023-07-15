@@ -24,6 +24,6 @@ burgerOpen.addEventListener("click", () => {
     promo.classList.toggle("promo-fixed");
     navigation.classList.toggle("header__nav-burger");
     // header.classList.toggle("header__scrolled");
-    // header.classList.toggle("header__burger-menu");
+    header.classList.toggle("header__burger-menu");
     document.body.classList.toggle("hidden-html");
 });

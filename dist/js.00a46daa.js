@@ -143,7 +143,7 @@ burgerOpen.addEventListener("click", function () {
   promo.classList.toggle("promo-fixed");
   navigation.classList.toggle("header__nav-burger");
   // header.classList.toggle("header__scrolled");
-  // header.classList.toggle("header__burger-menu");
+  header.classList.toggle("header__burger-menu");
   document.body.classList.toggle("hidden-html");
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
