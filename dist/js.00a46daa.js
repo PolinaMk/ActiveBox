@@ -139,10 +139,7 @@ var promoContent = document.querySelector('.promo__wrapper');
 var header = document.querySelector('.header');
 burgerOpen.addEventListener("click", function () {
   burgerOpen.classList.toggle("burger-cross");
-  promoContent.classList.toggle("hidden");
-  promo.classList.toggle("promo-fixed");
   navigation.classList.toggle("header__nav-burger");
-  // header.classList.toggle("header__scrolled");
   header.classList.toggle("header__burger-menu");
   document.body.classList.toggle("hidden-html");
 });
