@@ -344,11 +344,14 @@ path {
         margin-bottom: 78px;
     }
 
-    @media (max-width: 767px) {
-        padding: 106px 0 52px;
+    @media (max-width: 1024px) {
         min-height: 100vh;
         display: grid;
         align-items: center;
+    }
+
+    @media (max-width: 767px) {
+        padding: 106px 0 52px;
     }
 
     @media (max-width: 450px) {
